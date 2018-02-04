@@ -13,6 +13,15 @@ if [ "$EUID" -ne 0 ] ;
 	then echo "Run as Root"
 	exit
 fi
+if 
+printf "Hey, Were Newbie friendly, would you like a explaination of how to use the script?"
+read contyn
+	
+if [ "$contyn" = "Y" ] || [ "$contyn" = "y" ]; then
+	printf "Hey Newbies, if youre confused, if theres a line of code with (Y/N) then it needs a response \
+(generally indicated by the parentesis) and the choices are either expalined in it or indicated by the(Y/N) that you need to input either \
+'Y' or 'N'! Thanks for compling\!"
+	
 #List of Functions:
 #PasswdFun
 #zeroUidFun
@@ -54,7 +63,8 @@ cont(){
 	clear
 }
 PasswdFun(){
-	printf "\033[1;31mChanging Root's Password..\033[0m\n"
+	printf "\033[1;31mChanging Root's Password.. (Enter new root password then press `Return`\033[0m\n"
+	
 	#--------- Change Root Password ----------------
 	passwd
 	echo "Please change other user's passwords too"
